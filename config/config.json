@@ -1,0 +1,25 @@
+{
+    "middleware": {
+        "session": {
+            "module": {
+                "name": "path:./middleware/redis-session",
+                "arguments": [
+                    {
+                        "key": "abc123",
+                        "secret": "keyboard cat",
+                        "cookie": {
+                            "path": "/",
+                            "httpOnly": true,
+                            "maxAge": null
+                        },
+                        "proxy": null
+                    },
+                    {
+                        "host": "localhost",
+                        "port": 6379
+                    }
+                ]
+            }
+        }
+    }
+}
