@@ -3,13 +3,11 @@
 module.exports = function (router) {
 
     router.get('/', function (req, res) {
-        var visits;
+        var session;
 
-        visits = req.session.visits || 0;
-        visits += 1;
-        req.session.visits = visits;
-
-        res.send(200, String(visits));
+        session = req.session;
+        session.visits = (session.visits || 0) + 1;
+        res.send(200, String(session.visits));
     });
 
 };
